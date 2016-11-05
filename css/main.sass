@@ -1,0 +1,70 @@
+@import "_normalize"
+
+body
+  font-family: "Josefin Sans", sans-serif
+  color: #333
+
+.icon-choice-modal
+  min-height: 100vh
+  min-width: 100vw
+  z-index: 100
+  display: flex
+  flex-direction: column
+  justify-content: center
+  background: rgba(100,100,100,0.2)
+  position: absolute
+  text-align: center
+  &.closed
+    display: none
+  .choice
+    margin: 0 auto
+    background: rgba(135, 206, 235, .7)
+    padding: 20px
+    border-radius: 20px
+    div
+      display: flex
+      padding: 20px
+      span
+        font-size: 5rem
+        flex: 1
+        transition: all .2s ease-in-out
+        cursor: pointer
+        margin: 10px
+        &:hover
+          transform: scale(1.1)
+          color: #111
+
+.wrapper
+  min-width: 100vw
+  min-height: 100vh
+  background: orange
+  display: flex
+  flex-direction: column
+  justify-content: center
+  color: #000
+
+  .container
+    width: 300px
+    height: 300px
+    margin: 0 auto
+
+    display: flex
+    flex-direction: column
+
+.row
+  display: flex
+  flex: 1
+  .box
+    background: rgba(255, 69, 0, 1)
+    border: 1px solid orange
+    flex: 1
+    transition: all .2s ease-in-out
+    font-size: 5rem
+    display: flex
+    justify-content: center
+    flex-direction: column
+    cursor: pointer
+    span
+      margin: 0 auto
+    &:hover
+      transform: scale(1.1)
