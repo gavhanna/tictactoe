@@ -27,6 +27,15 @@ jQuery(function ($) {
       removeFromArray(fullPlace, boxes);
       placeIconAI();
     }
+    checkForWinner("X");
+    checkForWinner("O");
+    if (boxes.length < 1) {
+      if (confirm("Draw, soz. Play again?")) {
+        location.reload();
+      } else {
+        location.reload();
+      }
+    }
   };
 
   function placeIconAI(){
@@ -40,8 +49,6 @@ jQuery(function ($) {
         placeIconAI();
       }
     } else {console.log("the array is empty");}
-    checkForWinner("X");
-    checkForWinner("O");
   };
 
   function removeFromArray(item, array){
@@ -66,6 +73,10 @@ jQuery(function ($) {
       $("#box-5").text() === winner &&
       $("#box-9").text() === winner)
       ||
+      ($("#box-3").text() === winner &&
+      $("#box-5").text() === winner &&
+      $("#box-7").text() === winner)
+      ||
       ($("#box-1").text() === winner &&
       $("#box-4").text() === winner &&
       $("#box-7").text() === winner)
@@ -79,6 +90,8 @@ jQuery(function ($) {
       $("#box-9").text() === winner)
       ) {
         if (confirm(winner + " wins! Play again?")) {
+          location.reload();
+        } else {
           location.reload();
         }
     }
